@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an appointment</title>
+    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+
+    <style>
+        #bookingForm{
+            padding: 1rem;
+            text-align: center;
+            background: rgb(0, 92, 54);
+            color: white;
+        }#bookingForm > label{
+            display: inline-block;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }#bookingForm > select, input, button{
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <header style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 10vh; padding:0 2rem 0 2rem ; background: rgb(0, 75, 0);">
+        <!--logo-->
+        <div style="color: white;">Lozik</div>
+        <!--shopping list-->
+        <div style="height: 100%; width: 6rem; background: rgb(255, 255, 174);">
+            <a href="/payment"><div style="height: 100%; width: 6rem; background: rgb(255, 255, 174); padding: 6px;">
+                <span id="totalNum"></i></span> <i class="fas fa-shopping-bag"></i><br>
+                <span id="totalPrice" style="margin-top: 7px; display: inline-block; word-wrap: break-word; width: 100%; overflow-y: scroll;"></span>
+            </div></a>
+        </div>
+        <!--navigation-->
+        <a style="color: white;" onclick="displayNavigation()"><i class="fas fa-bars" style="transform: scale(1.7);"></i></a>
+    </header>
+
+
+    <nav id="nav">
+        <a href="/home">Home</a><br>
+        <a href="/about">About</a><br>
+        <a href="/services">Services</a><br>
+        <a href="/shop">Shop</a><br>
+        <a href="/book">Book</a><br>
+        <a href="/contact">Contact</a><br>
+    </nav>
+
+
+    <div style="background-color: rgb(137, 255, 190); align-items: center;  display: flex; flex-direction: column;">
+        <br><br>
+        <div style="background-color: white; width: 90%; border-radius: 1em; padding: .7rem; text-align: center;">
+            <h1 style="margin-top: 0; font-family: serif; font-weight: 100; color: rgb(0, 85, 64);">Book Your Appointment</h1>
+            <p style="line-height: 1.5; font-size: .9rem;">Your journey to radiant skin and total wellness starts here!</p>
+            <p style="line-height: 1.5; font-size: .9rem;">
+                At AestheticsByLozik, booking your beauty and wellness session is simple and seamless, laser treatment, or
+                cosmetic enhancement -- our expert team is readyto pamper you.
+            </p>
+        </div>
+        <br>
+    </div>
+
+
+
+    <div>
+        <form id="bookingForm">
+            <label><span style="color: red;">*</span>Service Type</label><br>
+            <select name="service" required>
+                <option value="Manicure">Manicure</option>
+                <option value="Rhinoplasty">Rhinoplasty</option>
+                <option value="Botox">Botox</option>
+            </select>
+            <br>
+            <label><span style="color: red;">*</span>Location</label><br>
+            <select name="location" required>
+                <option value="Ikenegbu, Owerri, Imo State">Ikenegbu, Owerri, Imo State</option>
+                <option value="Lagos State, Nigeria">Lagos State, Nigeria</option>
+            </select><br>
+            <label name="time"><span style="color: red;">*</span>Date and Time</label><br>
+            <input type="datetime-local" required/><br>
+            <label><span style="color: red;">*</span>Full Name</label><br>
+            <input name="name" type="text" required/><br>
+            <label><span style="color: red;">*</span>Email</label><br>
+            <input name="email" type="email" required/><br>
+            <label><span style="color: red;">*</span>phone</label><br>
+            <input name="number" type="tel" required/><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+
+    <!--footer-->
+    <footer>
+        <div>
+            <div><br>
+                <p style="font-size: .9rem; text-align: center;">Let's help you look good, feel confident, and glow effortlessly.</p><br>
+                <div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: center;">
+                    <a><i class="fab fa-facebook"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-whatsapp"></i></a>
+                    <a><i class="fab fa-tiktok"></i></a>
+                    <a><i class="fab fa-discord"></i></a>
+                </div>
+            </div><br><br>
+            <div style="text-align: center;">
+                <h2 style="font-family: serif; font-weight: 100;">Quick Links</h2>
+                <a href="/home">Home</a><br>
+                <a href="/about">About</a><br>
+                <a href="/services">Services</a><br>
+                <a href="/shop">Shop</a><br>
+                <a href="/book">Book</a><br>
+                <a href="/contact">Contact</a><br>
+            </div>
+            <div>
+                <h2 style="font-family: serif; font-weight: 100;">Get in touch</h2>
+                <p style="font-size: .9rem; line-height: 1.5; font-weight: 300;">
+                    Ikenegbu, Owerri, Imo State | Lagos, Nigeria <br>
+                    07038839142 | 08093734438<br>
+                    info@aestheticsbylozik.com
+                </p><br>
+            </div>
+        </div>
+        <div>
+            <hr style="width: 100vw;">
+            <span style="font-size: small; padding: 1rem; display: inline-block;">Copyright @ 2025 AestheticsByLozik</span>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script src="js/universal.js"></script>
+    <script>
+        bookingForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const bookingForm = document.getElementById("bookingForm");
+
+            let formData = new FormData(bookingForm);
+            formData = Object.fromEntries(formData.entries());
+            
+            fetch("/bookAppointment", {
+                method: "post",
+                headers : {
+                    "Content-Type":  "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.res);
+            })
+            .catch(err => {
+                alert(err)
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>services</title>
+    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/service.css" rel="stylesheet">
+</head>
+<body>
+    
+
+    <header style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 10vh; padding:0 2rem 0 2rem ; background: rgb(0, 0, 0);">
+        <!--logo-->
+        <div style="color: white;">Lozik</div>
+        <!--shopping list-->
+        <div style="height: 100%; width: 6rem; background: rgb(255, 255, 174);">
+            <a href="/payment"><div style="height: 100%; width: 6rem; background: rgb(255, 255, 174); padding: 6px;">
+                <span id="totalNum"></i></span> <i class="fas fa-shopping-bag"></i><br>
+                <span id="totalPrice" style="margin-top: 7px; display: inline-block; word-wrap: break-word; width: 100%; overflow-y: scroll;"></span>
+            </div></a>
+        </div>
+        <!--navigation-->
+        <a style="color: white;" onclick="displayNavigation()"><i class="fas fa-bars" style="transform: scale(1.7);"></i></a>
+    </header>
+
+
+    <nav id="nav">
+        <a href="/home">Home</a><br>
+        <a href="/about">About</a><br>
+        <a href="/services">Services</a><br>
+        <a href="/shop">Shop</a><br>
+        <a href="/book">Book</a><br>
+        <a href="/contact">Contact</a><br>
+    </nav>
+
+
+    <!--welcome message-->
+    <div style="background-color: black; color: white; padding: 2rem; text-align: center;">
+        <h2 style="margin-top: 0;font-family: serif;">Our Services</h2>
+        <h1 style="font-family: serif;">Spa Center</h1>
+        <p style="line-height: 1.5;">
+            At AestheticsByLozik, we provide a full range of cosmetic medical and  advanced aesthetics streatments
+            designed to rejuvinate your skin, sculp your body, and help yyou look and feel your best. Our expert
+            team combines advanced technology with personalized care to deliver safe, effective, and natural-looking 
+            results.
+        </p>
+    </div>
+
+
+
+    <!--products list-->
+    <div id="serviceList">
+    </div>
+
+
+
+    <!--get in touch-->
+    <main>
+        <h1 style="width: 100%; background: rgb(0, 75, 0); color: white; text-align: center; margin-top: 0; padding: 2rem; font-family: serif; font-size: 9vw; font-weight: 100;"></h1>
+        <div style="padding: 3rem 1rem 3rem 1rem;" id="getInTouch">
+            <div>
+                <h1 style="font-family: serif; color: rgb(67, 131, 67); font-size: 1.2rem; font-weight: 100;">WHAT ARE YOU WAITING FOR.....</FOrm></h1>
+                <h1 style="font-family: serif; font-weight: 100; color: rgb(0, 56, 0); font-size: 1.7rem;">Get In Touch</h1>
+                <p style="line-height: 1.5; font-size: .9rem; color: rgb(70, 57, 42);">
+                    Reach to experience expert skin care and beauty treatments? Schedule your session with AestheticsByLozik in just a few clicks!
+                </p>
+    
+                <div>
+                    <div>
+                        <i class="fas fa-location"></i>
+                        <h2>VISIT US IN OWERRI OR LAGOS</h2>
+                        <p>Ikenegbu, Owerri, Imostate | Lagos State, Nigeria</p>
+                        <hr>
+                    </div>
+                    <div>
+                        <i class="fas fa-clock"></i>
+                        <h2>OPENING HOURS</h2>
+                        <p>Mon-Fri: 9am-5pm<br> Sat: 8am-2pm</p>
+                        <hr>
+                    </div>
+                    <div>
+                        <i class="fas fa-store"></i>
+                        <h2>CONTACT</h2>
+                        <p>PHONE: 07038839142 | 08093734438<br> Email: info@aestheticsbylozik.com</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <form id="mailerForm">
+                <hr><br>
+                <label>Name<span> *</span></label><br>
+                <input type="text" name="name" required/><br><br>
+                <label>Email<span> *</span></label><br>
+                <input type="email" name="email" required/><br><br>
+                <label>Phone number<span> *</span></label><br>
+                <input name="number" type="text" required/><br><br>
+                <label>Paragraph Text<span> *</span></label><br>
+                <textarea name="message" rows = "13" required></textarea><br><br>
+                <button type="submit"><b>SEND MESSAGE</b></button>
+            </form>
+        </div>
+    </main>
+
+
+    <!--footer-->
+    <footer>
+        <div>
+            <div><br>
+                <p style="font-size: .9rem; text-align: center;">Let's help you look good, feel confident, and glow effortlessly.</p><br>
+                <div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: center;">
+                    <a><i class="fab fa-facebook"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-whatsapp"></i></a>
+                    <a><i class="fab fa-tiktok"></i></a>
+                    <a><i class="fab fa-discord"></i></a>
+                </div>
+            </div><br><br>
+            <div style="text-align: center;">
+                <h2 style="font-family: serif; font-weight: 100;">Quick Links</h2>
+                <a href="/home">Home</a><br>
+                <a href="/about">About</a><br>
+                <a href="/services">Services</a><br>
+                <a href="/shop">Shop</a><br>
+                <a href="/book">Book</a><br>
+                <a href="/contact">Contact</a><br>
+            </div>
+            <div>
+                <h2 style="font-family: serif; font-weight: 100;">Get in touch</h2>
+                <p style="font-size: .9rem; line-height: 1.5; font-weight: 300;">
+                    Ikenegbu, Owerri, Imo State | Lagos, Nigeria <br>
+                    07038839142 | 08093734438<br>
+                    info@aestheticsbylozik.com
+                </p><br>
+            </div>
+        </div>
+        <div>
+            <hr style="width: 100vw;">
+            <span style="font-size: small; padding: 1rem; display: inline-block;">Copyright @ 2025 AestheticsByLozik</span>
+        </div>
+    </footer>
+
+
+
+    <script  src="js/universal.js"></script>
+    <script src="js/service.js"></script>
+</body>
+</html>

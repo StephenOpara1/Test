@@ -1,0 +1,28 @@
+#serviceList > div{
+    padding: 1rem;
+}#serviceList > div > img{
+    width: 100%;
+}#serviceList > div > div > p{
+    line-height: 1.5;
+    font-size: .9rem;
+    color: rgb(41, 29, 14);
+}#serviceList > div > div > h1{
+    font-family: serif;
+    color: rgb(0, 71, 56);
+}#serviceList > div > div > a{
+    color: rgb(0, 44, 31);
+    background-color: rgb(163, 255, 163);
+    padding: .5rem;
+    border: 1px solid rgb(0, 44, 31);
+    font-size: .9rem;
+}@media(min-width:750px){
+    #serviceList > div{
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+    }#serviceList > div > div{
+        width: 60%;
+    }#serviceList > div > img{
+        width: 250px;
+    }
+}

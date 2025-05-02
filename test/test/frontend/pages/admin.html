@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Tools</title>
+    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+<body style="background: rgb(0, 71, 44);">
+
+    
+    <header style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 10vh; padding:0 2rem 0 2rem ; background: rgb(0, 71, 44); border-bottom: 2px solid white;">
+        <!--logo-->
+        <div>hi</div>
+        <!--navigation-->
+        <a style="color: white;" onclick="displayNavigation()"><i class="fas fa-bars" style="transform: scale(1.7);"></i></a>
+    </header>
+
+
+    <nav id="nav">
+        <a href="/home">Home</a><br>
+        <a href="/about">About</a><br>
+        <a href="/services">Services</a><br>
+        <a href="/shop">Shop</a><br>
+        <a href="/book">Book</a><br>
+        <a href="/contact">Contact</a><br>
+    </nav>
+
+
+    <div id="tools">
+        <div>
+            <h1>Edit Website products</h1>
+            <span><button onclick="display('productForm')">Add product</button><button>View Services</button></span>
+            <div id="productForm">
+                <span onclick="Close('productForm')"><i style="transform: scale(2);" class="fas fa-times"></i></span>
+                <form id="addProduct">
+                    <h1>Apply the inputs below to add products</h1>
+                    <input name="productName" placeholder="product name"/><br>
+                    <input name="productCategory" placeholder="product category"/><br>
+                    <input name="productPrice" type="number" placeholder="product price in naira"/><br>
+                    <textarea rows="10" name="productDescription" placeholder="Description"></textarea><br>
+                    <input name="productImage" type="file"/><br>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <h1>Edit Website Services</h1>
+            <span><button onclick="display('serviceForm')">Add Service</button><button>View service</button></span>
+            <div id="serviceForm">
+                <span onclick="Close('serviceForm')"><i style="transform: scale(2);" class="fas fa-times"></i></span>
+                <form id="addService">
+                    <h1>Apply the inputs below to add products</h1>
+                    <input name="serviceName" placeholder="service name"/><br>
+                    <textarea rows="10" name="serviceDescription" placeholder="Description"></textarea><br>
+                    <input name="serviceImage" type="file"/><br>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script  src="js/universal.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

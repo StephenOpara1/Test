@@ -1,0 +1,161 @@
+#services{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}#services > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}#services > div > span{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: rgb(0, 65, 3);
+}#services > div > p{
+    line-height: 1.5;
+    color: rgb(100, 97, 80);
+}#services > div > img{
+    height: 25vh;
+    width: 25vh;
+    border-radius: 50%;
+    background-color: green;
+    margin-top: 0rem;
+}@media(min-width: 750px){
+    #services{
+        flex-direction: row;
+        padding: 0 2rem 0 2rem;
+    }#services > div{
+        text-align: left;
+    }
+}
+
+
+
+
+
+#ourGoal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+    background: rgb(0, 87, 0);
+    color: white;
+}#ourGoal > img{
+    width: 80vw;
+    height: 60vh;
+    background: black;
+}#ourGoal > p{
+    line-height: 1.5;
+}
+
+
+
+
+
+
+#cares > div{
+    margin-top: 2.5rem;
+}
+#cares > div > span{
+    color: rgb(81, 163, 81);
+}#cares > div > h1{
+    font-size: 1.2rem;
+    color: rgb(0, 83, 0);
+}#cares > div > p{
+    font-size: .9rem;
+    line-height: 1.4;
+    margin-bottom: 3rem;
+    color: rgb(56, 58, 30);
+}
+
+
+
+
+#qualifications > div{
+    text-align: center;
+}
+#qualifications > div > h1{
+    color: rgb(0, 94, 0);
+    font-family: serif;
+    font-size: 1.5rem;
+}#qualifications > div > span{
+    color: rgba(0, 0, 0, 0.568);
+}@media(min-width: 750px){
+    #qualifications{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+#facts > div > div > div > span{
+    display: inline-block;
+    padding: .8rem .5rem .8rem .5rem;
+    width: 100%;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    background: rgb(255, 255, 174);
+    color: rgb(0, 22, 0);
+}#facts > div > div > div > div{
+    overflow: hidden;
+    height: 0;
+    line-height: 1.4;
+    font-size: .9rem;
+    padding: 0;
+    background: white;
+    color: black;
+    transition-duration: 2s;
+}#facts > div > div > div > span:hover ~ .fact{
+    height: auto;
+    padding: 1%;
+}
+
+
+
+#stories > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 2rem;
+}
+#stories > div > div{
+    padding: 1rem;
+    text-align: left;
+    width: 90%;
+    border-radius: .6rem;
+    border: 1px solid green;
+}#stories > div > div > p{
+    font-size: .9rem;
+    line-height: 1.5;
+    color: rgb(54, 61, 37);
+}#stories > div > div > i{
+    transform: scale(1.7);
+}#stories > div > div > span{
+    font-size: small;
+    color: rgb(0, 31, 0);
+}@media(min-width: 750px){
+    #stories > div{
+        flex-direction: row;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+
+
+

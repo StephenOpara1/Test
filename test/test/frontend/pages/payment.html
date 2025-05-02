@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <style>
+        #item{
+            display: flex;
+            flex-direction: row;
+            padding: 1rem;
+            gap: 20px;
+            width: 100%;
+        }#item > img{
+            background-color: black;
+            width: 100px;
+            height: 150px;
+        }#item > div > h3{
+            font-family: serif;
+            font-weight: 100;
+            color: rgb(0, 80, 63);
+        }#item > div > span > span{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 10vh; padding:0 2rem 0 2rem ; background: rgb(0, 71, 44); border-bottom: 2px solid white;">
+        <!--logo-->
+        <div style="color: white;">Lozik</div>
+        <h3 style="font-family: serif; color: white;">Review Your Order</h3>
+        <!--navigation-->
+        <a style="color: white;" onclick="displayNavigation()"><i class="fas fa-bars" style="transform: scale(1.7);"></i></a>
+    </header>
+
+
+    <nav id="nav">
+        <a href="/home">Home</a><br>
+        <a href="/about">About</a><br>
+        <a href="/services">Services</a><br>
+        <a href="/shop">Shop</a><br>
+        <a href="/book">Book</a><br>
+        <a href="/contact">Contact</a><br>
+    </nav>
+
+
+    <div>
+        <div id="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            
+        </div>
+    </div>
+
+    
+    <div style="padding: 1rem;">
+        <span id="totalnum" style="font-size: 2rem; color: rgb(180, 129, 87);">Total Number:</span><br>
+        <span id="totalprice" style="font-size: 2rem; color: rgb(180, 129, 87);">Total Price:</span><br><br>
+        <input type="email" id="email" placeholder="youremail@example.com" style="outline: none; padding: 5px;" required/>
+        <button style="padding: 5px;" onclick="payWithPayStack()">Buy All</button>
+        
+    </div>
+
+
+    <script src="js/universal.js"></script>
+    <script>
+
+        function getAllItem(){
+            fetch("/getAllItems", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({uuid: localStorage.getItem("uuid")})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.err){
+                    alert(data.err)
+                }else{
+                    const grouped = {};
+                    data.res.items.forEach(item => {
+                        const key = JSON.stringify(item);
+                        if(grouped[key]){
+                            grouped[key].quantity += 1;
+                        } else{
+                            grouped[key] = {...item, quantity: 1}
+                        }
+                    });
+
+                    const result = {items: Object.values(grouped)};
+
+                    const container = document.getElementById('container');
+                    container.innerHTML = '';
+                    let totalnum =0; let totalprice=0;
+                    result.items.forEach(item => {
+                        totalnum += parseInt(item.quantity);
+                        totalprice += parseFloat(item.productprice);
+                        container.innerHTML += `
+                        <div id="item">
+                            <img src="https://"/>
+                            <div>
+                                <h3>${item.productname}</h3>
+                                <span>N${parseFloat(item.productprice).toLocaleString()}</span>
+                                <br><br>
+                                <span style="border: 1px solid gray; padding: 4px;"></i><span id="total${item.id}">${item.quantity}</span></span>
+                            </div>
+                        </div>`
+                    });
+
+                    document.getElementById("totalnum").innerText ="Number of goods: " + totalnum.toLocaleString();
+                    document.getElementById("totalprice").innerText = "Total Price: N" + totalprice.toLocaleString();
+                }
+            })
+        }
+        getAllItem();
+
+
+
+
+
+
+        function payWithPayStack() {
+            const email = document.getElementById("email").value;
+
+            const handler = paystackPop.setup({
+                key: "",
+                email: email,
+                amount: x * 100,
+                currency: 'NGN',
+                ref: 'ref-' + Math.floor(Math.random() * 10000000000000000000 + 1),
+                callback: function(response){
+                    alert('payment successful! Reference: ' + response.reference);
+                },
+                onClose: function(){
+                    alert('Closed')
+                }
+            })
+
+            handler.openIframe();
+        }
+    </script>
+</body>
+</html>

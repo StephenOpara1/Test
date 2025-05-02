@@ -1,0 +1,37 @@
+#productList{
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+}#productList > div > a > img{
+    width: 250px;
+    height: 300px;
+    background-color: black;
+}#productList > div > span{
+    color: rgb(65, 52, 36);
+}#productList > div > span:last-child{
+    font-size: .9rem;
+}#productList > div > h3{
+   color: red;
+   margin: .3rem;
+   font-weight: 100;
+   font-family: serif;
+   color: #003a29;
+}#productList > div > i{
+    color: yellow;
+}#productList > div > b{
+    background-color: rgb(165, 255, 165);
+    font-size: small;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+    color: rgb(0, 48, 40);
+    border: 1px solid rgb(65, 52, 36);
+    padding: 10px;
+}@media(min-width:600px){
+    #productList{
+        flex-wrap: wrap;
+        flex-direction: initial;
+        justify-content: center;
+    }
+}
