@@ -8,7 +8,7 @@ const router = express.Router();
 const transporter = nodemailer.createTransport({
     service:"gmail",
     auth:{
-        user: process.env.MAIL_ADDRESS,
+        user: "rfcowebsite@gmail.com",
         pass: process.env.APP_PASSWORD
     }
 });
