@@ -67,7 +67,7 @@
 
     <script src="js/universal.js"></script>
     <script>
-
+        let x = 0;
         function getAllItem(){
             fetch("/getAllItems", {
                 method: "post",
@@ -113,6 +113,7 @@
 
                     document.getElementById("totalnum").innerText ="Number of goods: " + totalnum.toLocaleString();
                     document.getElementById("totalprice").innerText = "Total Price: N" + totalprice.toLocaleString();
+                    x=totalprice
                 }
             })
         }
@@ -127,7 +128,7 @@
             const email = document.getElementById("email").value;
 
             const handler = paystackPop.setup({
-                key: "",
+                key: 'pk_test_2a9f212a447f165b2e8e8b5c914f6bb64c83d7d2',
                 email: email,
                 amount: x * 100,
                 currency: 'NGN',
