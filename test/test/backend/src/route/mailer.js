@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 
 router.post("/sendMail", async (req, res) => {
-    let {email, name, number, message} = req.body;//exctract data
+    const {email, name, number, message} = req.body;//exctract data
     
     try {
         //mail info

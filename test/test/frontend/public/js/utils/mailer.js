@@ -5,7 +5,6 @@ mailerForm.addEventListener("submit", (event) => {
 
     const formData = new FormData(mailerForm);
     const formObject = Object.fromEntries(formData.entries());
-
     fetch("/sendMail", {
         method: "POST",
         headers: {
