@@ -32,7 +32,7 @@ router.post("/bookAppointment", async (req, res) => {
 
         const toUser = {
             from:"rfcowebsite@gmail.com",
-            to: `${email}`,
+            to: email,
             subject: "Thanks for choosing AestheticByLoozik",
             html:`
                 <p>Our employees will bee in toouch with you shortly..... Thanks for choosing us</p>

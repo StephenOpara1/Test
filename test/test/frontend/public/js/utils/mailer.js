@@ -1,22 +1,23 @@
 const mailerForm = document.getElementById("mailerForm");
 
 mailerForm.addEventListener("submit", (event) => {
-    event.preventDefault(); //prevents default form behaviour
+    event.preventDefault();
 
-    const formData = new FormData(mailerForm)
+    const formData = new FormData(mailerForm);
+    const formObject = Object.fromEntries(formData.entries());
 
     fetch("/sendMail", {
-        method : "POST",
+        method: "POST",
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formObject)
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.res)
+        alert(data.res);
     })
     .catch(error => {
-        alert(error)
-    })
-})
+        alert("An error occurred: " + error);
+    });
+});

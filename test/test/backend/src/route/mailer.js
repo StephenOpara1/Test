@@ -44,9 +44,9 @@ router.post("/sendMail", async (req, res) => {
         //sends the email
         await transporter.sendMail(mailOptions, (error, info) => {
             if(error){
-                res.status(200).json({res: "An error occured! Try again!"});
+                res.status(500).json({res: "An error occured! Try again!"});
             } else{
-                res.status(400).json({res: "Email sent to AestheticByLozik successfullly"});
+                res.status(200).json({res: "Email sent to AestheticByLozik successfullly"});
             }
         })
 
@@ -57,7 +57,7 @@ router.post("/sendMail", async (req, res) => {
             }
         })
     } catch (error) {
-        res.status(400).json({res: "An error occured! Try again!"});
+        res.status(500).json({res: "An error occured! Try again!"});
         console.log(error);
     }
 });
